@@ -7,7 +7,13 @@ import { Link } from 'react-router-dom';
 const Side = () => {
   const [allTables, setAllTables] = useState([]);
   const { isLoggedIn, currentUserTable } = useContext(dbmscontext);
+  const[search,setsearch]=useState('');
 
+
+  const handleseach=(e)=>{
+    setsearch(e.target.value);
+    console.log("search text:",search);
+  }
   useEffect(() => {
     const fetchData = async () => {
       const token = localStorage.getItem('token');
@@ -39,6 +45,8 @@ const Side = () => {
               type="text"
               className="bg-gray-200 text-gray-700 py-2 px-4 rounded-l-md focus:outline-none w-full"
               placeholder="Search..."
+              value={search}
+             onChange={handleseach}
             />
             <button className="bg-gray-200 hover:bg-gray-300  text-white py-3 space-x-1 px-4 rounded-r-md flex items-center justify-center">
               <i className="fas fa-search text-black"></i>
