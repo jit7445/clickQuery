@@ -23,7 +23,7 @@ const Login = () => {
       console.log("response::", response.data.user.username);
       setCurrentUser(response.data.user.username);
       setIsLoggedIn(true);
-      navigate('/');
+      navigate('/ddl');
       console.log('Login successful:', response.data.token);
     } catch (error) {
       console.error('Login failed', error.message);

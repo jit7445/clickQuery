@@ -34,7 +34,7 @@ const Signup = () => {
       
       // Ensure navigate is called
       console.log("Navigating to home");
-      navigate('/');
+      navigate('/ddl');
     } catch (err) {
       console.error('Signup failed:', err);
     }

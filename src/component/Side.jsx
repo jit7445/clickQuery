@@ -20,7 +20,7 @@ const Side = () => {
       if (token && isLoggedIn) {
         try {
           const decodedToken = jwtDecode(token);
-          const userId = decodedToken.userId;i
+          const userId = decodedToken.userId;
 
           const response = await axios.get(`http://localhost:3334/api/tabledata/${userId}`);
           const data = response.data;
